@@ -1,0 +1,48 @@
+<!-- user_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+</head>
+<body>
+    <h1>User List</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Street</th>
+                <th>Suite</th>
+                <th>City</th>
+                <th>ZipCode</th>
+                <th>Phone</th>
+                <th>Website</th>
+                <th>Company Name</th>
+                <th>Company catch_phrase</th>
+                <th>Company bs </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.name }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.address.street }}</td>
+                <td>{{ user.address.suite }} </td>
+                <td>{{ user.address.city }} </td>
+                <td>{{ user.address.zipcode }}</td>
+                <td>{{ user.phone }}</td>
+                <td>{{ user.website }}</td>
+                <td>{{ user.company.name }}</td>
+                <td> {{ user.company.catch_phrase }} </td>
+                <td> {{ user.company.bs }} </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
